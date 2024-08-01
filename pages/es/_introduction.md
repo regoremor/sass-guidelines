@@ -1,13 +1,13 @@
 
-# Introducción
+## Introducción
 
-## Por Qué Una Guía De Estilo
+### Por Qué Una Guía De Estilo
 
 Una guía de estilo no es sólo un documento agradable de leer mientras te imaginas tu código perfecto. Se trata de un documento clave en la vida de un proyecto, describe cómo y por qué debe escribirse el código. Puede parecer una exageración para pequeños proyectos, pero es de gran ayuda para mantener el código limpio, escalable y fácil de mantener.
 
 Sobra decir, que cuantos más desarrolladores participen en el proyecto, más necesarias son las guías de estilo. En la misma línea, cuanto más grande es el proyecto, la guía de estilo se convierte en una necesidad.
 
-[Harry Roberts](http://csswizardry.com) Lo explica muy bien en su [CSS Guidelines](http://cssguidelin.es/#the-importance-of-a-styleguide):
+[Harry Roberts](https://csswizardry.com) Lo explica muy bien en su [CSS Guidelines](https://cssguidelin.es/#the-importance-of-a-styleguide):
 
 <blockquote>
   <p>Una guía de estilo (nota, no es una guía de estilo visual) es una valiosa herramienta para los equipos que:</p>
@@ -20,7 +20,7 @@ Sobra decir, que cuantos más desarrolladores participen en el proyecto, más ne
   </ul>
 </blockquote>
 
-## Renuncia De Responsabilidad
+### Renuncia De Responsabilidad
 
 Primero lo primero: **esta no es una guía de CSS**. Este documento no tratará sobre convenciones de nomenclatura para clases CSS, ni sobre los patrones modulares de CSS, ni mucho menos, sobre la cuestión de los IDs en el mundo CSS. Esta guía solo busca estudiar el contenido relacionado específicamente con Sass.
 
@@ -28,13 +28,13 @@ Además, esta guía está elaborada por mi y por tanto es **subjetiva y personal
 
 Obviamente, esta no es la única forma de hacer las cosas, y puede que encaje o no en tu proyecto. Siéntete libre de elegir lo que te interese y de adaptarlo a tus necesidades. Como decimos, *tu experiencia puede variar*.
 
-## Principios Clave
+### Principios Clave
 
-Al final del día, si hay una cosa que me gustaría que aprendieses de toda esta guía, es que **[Sass debe mantenerse tan simple como sea posible](http://www.sitepoint.com/keep-sass-simple/)**.
+Al final del día, si hay una cosa que me gustaría que aprendieses de toda esta guía, es que **[Sass debe mantenerse tan simple como sea posible](https://www.sitepoint.com/keep-sass-simple/)**.
 
-Gracias a mis tontos experimentos, como por ejemplo: [Operadores bit a bit](https://github.com/HugoGiraudel/SassyBitwise), [iteradores y generadores](https://github.com/HugoGiraudel/SassyIteratorsGenerators) y [analizador JSON](https://github.com/HugoGiraudel/SassyJSON) en Sass, podemos ser conscientes de lo que se puede hacer con este preprocesador.
+Gracias a mis tontos experimentos, como por ejemplo: [Operadores bit a bit](https://github.com/KittyGiraudel/SassyBitwise), [iteradores y generadores](https://github.com/KittyGiraudel/SassyIteratorsGenerators) y [analizador JSON](https://github.com/KittyGiraudel/SassyJSON) en Sass, podemos ser conscientes de lo que se puede hacer con este preprocesador.
 
-Mientras CSS es un lenguaje sencillo. Sass, destinado a escribir CSS, no debería ser mucho más complejo que el CSS normal. El [principio KISS](http://es.wikipedia.org/wiki/Principio_KISS) (Keep It Simple Stupid) es la clave aquí, e incluso puede tener prioridad respecto al [principio DRY](http://es.wikipedia.org/wiki/No_te_repitas) (Don’t Repeat Yourself) en algunas circunstancias.
+Mientras CSS es un lenguaje sencillo. Sass, destinado a escribir CSS, no debería ser mucho más complejo que el CSS normal. El [principio KISS](https://es.wikipedia.org/wiki/Principio_KISS) (Keep It Simple Stupid) es la clave aquí, e incluso puede tener prioridad respecto al [principio DRY](https://es.wikipedia.org/wiki/No_te_repitas) (Don’t Repeat Yourself) en algunas circunstancias.
 
 Algunas veces es mejor repetirse un poco para que el proyecto sea fácil de mantener, antes que construir un sistema demasiado pesado, inabarcable e innecesariamente complicado que genere un código imposible de mantener debido a su complejidad.
 
@@ -42,7 +42,7 @@ También, si me permites que cite a [Harry Roberts](https://csswizardry.com) una
 
 
 
-## Ampliación de la guía
+### Ampliación de la guía
 
 Una gran parte de esta guía es claramente subjetiva. Llevo leyendo y escribiendo Sass bastantes años, hasta el punto en el que tengo muchos principios en lo que se refiere a escribir una hoja de estilo limpia. Entiendo que esto no pueda complacer o encajar con todo el mundo, lo cual es perfectamente normal.
 

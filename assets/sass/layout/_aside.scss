@@ -21,6 +21,11 @@
   top: 0; /* 1 */
   width: $sidebar-width;
   z-index: 30;
+  animation: slide-in 250ms 250ms both;
+}
+
+@keyframes slide-in {
+  from { transform: translateX(100%); }
 }
 
 .aside__overlay {
@@ -31,6 +36,11 @@
   right: 0;
   top: 0;
   z-index: 20;
+  animation: appear 200ms both;
+}
+
+@keyframes appear {
+  from { opacity: 0 }
 }
 
 /**
@@ -67,6 +77,7 @@
 .aside__heading {
   color: $dark-grey;
   font-size: 0.9em;
+  font-weight: bold;
   margin: 0 0 0.5em;
   padding: 0.5rem 0;
   text-transform: capitalize;
@@ -84,8 +95,6 @@
   position: absolute;
   right: 0.5em;
   top: 0.4em; /* 1 */
-  -webkit-transform: scale(1.25); /* 2 */
-  -moz-transform: scale(1.25); /* 2 */
   transform: scale(1.25); /* 2 */
   text-decoration: none;
 }
@@ -116,8 +125,6 @@
    * Visual fix for input placement
    */
   input {
-    -webkit-transform: translate(-1px, -1px);
-    -ms-transform: translate(-1px, -1px);
     transform: translate(-1px, -1px);
   }
 

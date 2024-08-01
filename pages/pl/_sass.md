@@ -1,7 +1,7 @@
 
-# O Sassie
+## O Sassie
 
-Zdaniem twórców [Sassa](http://sass-lang.com), zawartym w jego [dokumentacji](http://sass-lang.com/documentation/file.SASS_REFERENCE.html):
+Zdaniem twórców [Sassa](https://sass-lang.com), zawartym w jego [dokumentacji](https://sass-lang.com/documentation/file.SASS_REFERENCE.html):
 
 > Sass jest rozszerzeniem dla CSSa, które dodaje mu mocy i elegancji.
 
@@ -13,26 +13,22 @@ Jego celem nie jest przekształcenie CSSa w pełnoprawny język programowania z 
 
 Tym samym, istnieje wiele sposobów na korzystanie z tych dodatkowych rozwiązań. Niektóre są poprawne, niektóre mniej, a niektóre też są niezwykłe. Ten przewodnik ma na celu przedstawienie spójnego i dobrze udokumentowanego podejścia do pisania kodu w Sassie.
 
-###### Dalsze informacje
-
-* [SitePoint Sass Reference](http://sitepoint.com/sass-reference/)
-
-## Ruby Sass czy LibSass
+### Ruby Sass czy LibSass
 
 [Pierwszy commit Sassa](https://github.com/hcatlin/sass/commit/fa5048ba405619273e474a50400c7243fbff54fe) pochodzi z końca 2006 roku, a więc było to ponad 8 lat temu. Nie trzeba więc dodawać, że Sass przebył dość długą drogę. Choć początkowo rozwijany w Ruby, od tego czasu pojawił się szereg różnych portów. Ten najbardziej kompletny, [LibSass](https://github.com/sass/libsass) (napisany w C/C++), jest bliski do pełnej kompatybilności z oryginalną wersją, napisaną w Ruby.
 
-W 2014 roku, [zespoły pracujące nad Ruby Sass i LibSass postanowiły poczekać aby obie wersje się zrównały pod względem kompletności, zanim zaczną pracować nad nowymi udoskonaleniami](https://github.com/sass/libsass/wiki/The-LibSass-Compatibility-Plan). Od tego czasu, LibSass aktywnie wydaje nowe wersje swojego projektu i dąży do wyrównania ze swoim starszym bratem. Ostatnie pozostałe nieścisłości zostały zebrane i skategoryzowane przeze mnie w projekcie [Sass-Compatibility](http://sass-compatibility.github.io). W przypadku znania jakichś innych nieścisłości pomiędzy tymi obiema wersjami kompilatorów Sassa, które nie zostały tam podane – bardzo proszę o utworzenie nowego issue.
+W 2014 roku, [zespoły pracujące nad Ruby Sass i LibSass postanowiły poczekać aby obie wersje się zrównały pod względem kompletności, zanim zaczną pracować nad nowymi udoskonaleniami](https://github.com/sass/libsass/wiki/The-LibSass-Compatibility-Plan). Od tego czasu, LibSass aktywnie wydaje nowe wersje swojego projektu i dąży do wyrównania ze swoim starszym bratem. Ostatnie pozostałe nieścisłości zostały zebrane i skategoryzowane przeze mnie w projekcie [Sass-Compatibility](https://kittygiraudel.github.io/sass-compatibility/). W przypadku znania jakichś innych nieścisłości pomiędzy tymi obiema wersjami kompilatorów Sassa, które nie zostały tam podane – bardzo proszę o utworzenie nowego issue.
 
 Wracając do doboru kompilatora. Tak naprawdę, to wszystko zależy od konkretnego projektu. Jeśli oparty jest on o Ruby on Rails, oczywiście lepiej korzystać z Ruby Sass, który będzie idealnie z nim współgrał. Ponadto, Ruby Sass będzie zawsze tą pierwszorzędną implementacją i zawsze będzie o krok przed LibSassem, jeśli chodzi o dodatkową funkcjonalność.
 
 W przypadku zaś projektów nieopartych o Ruby, a które wymagają integracji z określonym porządkiem pracy, LibSass będzie prawdopodobnie lepszym rozwiązaniem. Jest on bowiem stworzony pod kątem wykorzystania go przez różne wrappery. W przypadku chęci użycia go z Node.js, [node-sass](https://github.com/sass/node-sass) będzie dla Ciebie idealny.
 
-###### Dalsze informacje
+**Dalsze informacje:**
 
-* [Getting to know LibSass](http://webdesign.tutsplus.com/articles/getting-to-know-libsass--cms-23114)
-* [Switching from Ruby Sass to LibSass](http://www.sitepoint.com/switching-ruby-sass-libsass/)
+* [Getting to know LibSass](https://webdesign.tutsplus.com/articles/getting-to-know-libsass--cms-23114)
+* [Switching from Ruby Sass to LibSass](https://www.sitepoint.com/switching-ruby-sass-libsass/)
 
-## Sass czy SCSS
+### Sass czy SCSS
 
 Panuje powszechnie dosyć spore zamieszanie, jeśli chodzi o znaczenie nazwy *Sass* i nie jest to bez powodu. Sass bowiem jest zarówno określeniem dla preprocesora, jak i swojej składni. Może to się wydawać nie do końca jasne, prawda?
 
@@ -44,13 +40,13 @@ Wrażliwa na tzw. znaki niedrukowalne składnia opiera się na indentacji zmiast
 
 Osobiście preferuję SCSS nad Sassem z powodu większej kompatybilności z CSSem i łatwości przyswojenia go sobie dla większości deweloperów. Z tego też powodu, w poniższym przewodniku posługiwać się będę raczej SCSSem niż Sassem. Można jednak w każdej chwili zmienić składnię przykładów tego przewodnika w <button type="button" data-a11y-dialog-show="options-panel" class="link-like">panelu opcji</button>.
 
-###### Dalsze informacje
+**Dalsze informacje:**
 
-* [What’s the difference between Sass and SCSS](http://www.sitepoint.com/whats-difference-sass-scss/)
+* [What’s the difference between Sass and SCSS](https://www.sitepoint.com/whats-difference-sass-scss/)
 
-## Inne preprocesory
+### Inne preprocesory
 
-Sass jest jednym z wielu dostępnych preprocesorów. Jego głównym konkurentem zdaje się być [LESS](http://lesscss.org/), który jest oparty o Node.js i który to zyskał popularność dzięki znanemu frameworkowi CSS, [Bootstrapowi](http://getbootstrap.com/). Znany jest także [Stylus](http://learnboost.github.io/stylus/) - zdający się być niczym nieskrępowaną wersją LESSa - z użyciem którego możesz zrobić w zasadzie wszystko, bowiem przekształca on właściwie CSS w pełnoprawny język programowania.
+Sass jest jednym z wielu dostępnych preprocesorów. Jego głównym konkurentem zdaje się być [LESS](http://lesscss.org/), który jest oparty o Node.js i który to zyskał popularność dzięki znanemu frameworkowi CSS, [Bootstrapowi](https://getbootstrap.com/). Znany jest także [Stylus](https://stylus-lang.com/) - zdający się być niczym nieskrępowaną wersją LESSa - z użyciem którego możesz zrobić w zasadzie wszystko, bowiem przekształca on właściwie CSS w pełnoprawny język programowania.
 
 *Dlaczego wybrać Sass zamiast LESS czy innego preprocesora?* jest wciąż aktualnym dziś pytaniem. Nie tak dawno temu rekomendowaliśmy Sass dla projektów bazujących dla Ruby właśnie dlatego, że był on pierwszym preprocesorem stworzonym w Ruby i dobrze współgrał z Ruby on Rails. Teraz, gdy LibSass nadgonił (w zasadzie) z oryginalnym Sassem, ten argument nie jest do końca właściwym.
 
@@ -60,7 +56,7 @@ Innymi słowy, Sass nie jest tym preprocesorem, który zadowoli takich programis
 
 Pomijając na chwilę kwestię preprocesorów, powinniśmy tutaj poruszyć też kwestię postprocesorów, które ostatnimi czasy stały się niesamowicie popularne. Stało się to głównie dzięki projektom takim jak [PostCSS](https://github.com/postcss/postcss) i [cssnext](https://cssnext.github.io/). Nazywane są często "postprocesorami", bowiem transpilują składnię ze standardów, które dopiero nadchodzą, do powszechnego dzisiaj CSSa. Są one jednak zasadniczo tym samym co preprocesory, oprócz tego że nie zapewniają one niczego ponad funkcjonalność, która ma się pojawić w nadchodzących specyfikacjach składni CSS.
 
-Można myśleć o postprocesorach jako polyfillach dla niewspieranych funkcjonalności CSSa. Dla przykładu, dają one możliwość pisania zmiennych w sposób, o jakim mówi [specyfikacja CSS](http://dev.w3.org/csswg/css-variables/). Takie arkusze stylów kompiluje się potem za pomocą postprocesora, w rezultacie czego wszystkie zmienne zastępowane są faktycznymi wartościami, zupełnie jak w przypadku Sassa.
+Można myśleć o postprocesorach jako polyfillach dla niewspieranych funkcjonalności CSSa. Dla przykładu, dają one możliwość pisania zmiennych w sposób, o jakim mówi [specyfikacja CSS](https://drafts.csswg.org/css-variables/). Takie arkusze stylów kompiluje się potem za pomocą postprocesora, w rezultacie czego wszystkie zmienne zastępowane są faktycznymi wartościami, zupełnie jak w przypadku Sassa.
 
 Postprocesorom przyświeca idea dostarczania nowych, projektowanych dopiero funkcjonalności CSSa (takich jak zmienne) tym przeglądarkom, które tego obecnie nie wspierają. Gdy zaś rozwiązania te zaczną być powszechnie obsługiwane, postprocesor przestanie działać na rzecz przeglądarki.
 

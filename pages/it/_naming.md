@@ -1,7 +1,7 @@
 
-# Convenzione sui nomi
+## Convenzione sui nomi
 
-In questa parte non andremo a parlare di qual è il miglior modo per creare nomi nel CSS in modo da assicurare manutenibilità e scalabilità. Non solo sta a te scegliere, ma è anche fuori dalla portata di queste linee guida Sass. Io suggerisco le convenzioni raccomandate da [CSS Guidelines](http://cssguidelin.es/#naming-conventions).
+In questa parte non andremo a parlare di qual è il miglior modo per creare nomi nel CSS in modo da assicurare manutenibilità e scalabilità. Non solo sta a te scegliere, ma è anche fuori dalla portata di queste linee guida Sass. Io suggerisco le convenzioni raccomandate da [CSS Guidelines](https://cssguidelin.es/#naming-conventions).
 
 Ci sono alcune cose a cui si possono dare nomi in Sass, ed è importante scegliere bene, in modo che l’intera codebase sia coerente e facile da leggere:
 
@@ -15,7 +15,7 @@ Riguardo variabili, funzioni e *Mixin*, rimaniamo con qualcosa di molto *CSS*: *
 
 {% include snippets/naming/01/index.html %}
 
-## Costanti
+### Costanti
 
 Se ti capita di essere uno sviluppatore di *framework*, o di scrivere una libreria, può capitare di trovarsi di fronte a variabili che non sono intese come qualcosa da poter aggiornare in ogni circostanza: sono delle costanti. Sfortunatamente (o fortunatamente?) Sass non offre nessuna maniera per definire queste entità. Dobbiamo così far leva su una stretta convenzione per i nomi in modo da raggiungere il nostro obiettivo.
 
@@ -23,9 +23,9 @@ Come per molti linguaggi, suggerisco di nominare le variabili costanti completam
 
 {% include snippets/naming/02/index.html %}
 
-Se volete davvero giocare con l'idea di costanti in Sass, dovreste leggere [questo articolo sull'argomento](http://www.sitepoint.com/dealing-constants-sass/).
+Se volete davvero giocare con l'idea di costanti in Sass, dovreste leggere [questo articolo sull'argomento](https://www.sitepoint.com/dealing-constants-sass/).
 
-## Namespace
+### Namespace
 
 Se si vuol distribuire il proprio codice Sass, ad esempio in una libreria, un framework, una griglia o qualsiasi altra cosa, si può considerare di applicare un namespace alle proprie variabili, funzioni, *mixin* e *placeholder*, in modo da evitare conflitti con altro codice.
 

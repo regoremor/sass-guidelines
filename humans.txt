@@ -3,16 +3,16 @@
 
 /* TEAM */
 
-    Author: Hugo Giraudel
-    Contact: @HugoGiraudel
+    Author: Kitty Giraudel
+    Contact: @KittyGiraudel
     From: Berlin, Germany
 
-    Designer: Hugo Giraudel
-    Contact: @HugoGiraudel
+    Designer: Kitty Giraudel
+    Contact: @KittyGiraudel
     From: Berlin, Germany
 
-    Front-end developer: Hugo Giraudel
-    Contact: @HugoGiraudel
+    Front-end developer: Kitty Giraudel
+    Contact: @KittyGiraudel
     From: Berlin, Germany
 
     Front-end developer: Moritz Kröger

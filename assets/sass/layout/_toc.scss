@@ -28,8 +28,6 @@
     overflow-y: auto;
     position: fixed;
     top: 50%;
-    -webkit-transform: translateY(-50%);
-    -moz-transform: translateY(-50%);
     transform: translateY(-50%);
   }
 
@@ -82,7 +80,7 @@
    * Hide ToC title on large screens, only displayed on small screens
    */
   .toc li:nth-of-type(3),
-  .toc h1 {
+  .toc h2 {
     display: none;
   }
 }

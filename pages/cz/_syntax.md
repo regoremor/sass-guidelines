@@ -1,11 +1,11 @@
 
-# Syntaxe & formátování
+## Syntaxe & formátování
 
 Pokud byste se mě zeptali, co je první věc, kterou by každá příručka měla obsahovat, bylo by to jak má kód vypadat.
 
 Když se několik vývojářů zapojí do psaní CSS ve stejném projektu, je jen otázkou času, než si jeden z nich začne dělat věci po svém. Manuály pro kód, které podporují konzistenci nejen že tomuto zabraňují, ale také pomáhají pokud jde o čtení a aktualizaci kódu.
 
-Tady je zhruba to, co chceme (beze studu inspirováno [CSS Guidelines](http://cssguidelin.es/#syntax-and-formatting)):
+Tady je zhruba to, co chceme (beze studu inspirováno [CSS Guidelines](https://cssguidelin.es/#syntax-and-formatting)):
 
 * dvě (2) mezery odsazení, žádné tabulátory;
 * ideálně, 80 znaků na řádek;
@@ -16,17 +16,17 @@ Tady je zhruba to, co chceme (beze studu inspirováno [CSS Guidelines](http://cs
 
 V této části nebudeme řešit organizaci souboru. Je to předmětem [jiné sekce](#architektura).
 
-## Textové řetězce
+### Textové řetězce
 
 Věřte nebo ne, řetězce hrají docela důležitou roli jak v CSS, tak i Sass ekosystémech. Většina CSS hodnod jsou buď délky nebo řetězce (většinou bez uvozovek), takže je docela zásadní držet se nějakého manuálu, pro vypořádávání se s řetězci v Sass.
 
-### Kódování
+#### Kódování
 
-Aby se zabránilo možným problémům s kódováním znaků, je vysoce doporučeno nastavit kódování [UTF-8](http://en.wikipedia.org/wiki/UTF-8) v [hlavním souboru se styly](#hlavn-soubor) použitím `@charset` direktivy. Ujistěte se, že je kódování nastaveno hned na prvním místě ve stylech a není před ním žádný znak.
+Aby se zabránilo možným problémům s kódováním znaků, je vysoce doporučeno nastavit kódování [UTF-8](https://en.wikipedia.org/wiki/UTF-8) v [hlavním souboru se styly](#hlavn-soubor) použitím `@charset` direktivy. Ujistěte se, že je kódování nastaveno hned na prvním místě ve stylech a není před ním žádný znak.
 
 {% include snippets/syntax/02/index.html %}
 
-### Uvozovky
+#### Uvozovky
 
 CSS nevyžaduje, aby byly řetězce obaleny uvozovkami, a to ani pokud obsahují mezery. Vezměte si například font-family názvy: CSS parseru nezáleží, jestli je zabalíte do uvozovek.
 
@@ -41,7 +41,7 @@ Jak již bylo řečeno, jazyky, které nevyžadují, aby byly řetězce obaleny 
 
 {% include snippets/syntax/03/index.html %}
 
-### Textové řetězce jako CSS hodnoty
+#### Textové řetězce jako CSS hodnoty
 
 Specifické CSS hodnoty jako `initial` nebo `sans-serif` vyžadují, aby nebyly v uvozovkách. Deklarace jako `font-family: 'sans-serif'` tiše selže, protože CSS očekává identifikátor, ne řetězec s uvozovkami. Z toho důvodu nepoužíváme uvozovky na tyto hodnoty.
 
@@ -51,34 +51,34 @@ Proto můžeme rozlišovat mezi řetězci, které mají být použiti jako CSS h
 
 Nepoužíváme uvozovky v prvním případně, ale v druhém případě využíváme jednoduchých uvozovek.
 
-### Textové řetězce obsahující uvozovky
+#### Textové řetězce obsahující uvozovky
 
 Pokud řetězec obsahuje jednu nebo více jednoduchých uvozovek, může se řetězec namísto toho zabalit dvojitými uvozovkami (`"`), aby se zabránilo úniku znaků z řetězce.
 
 {% include snippets/syntax/05/index.html %}
 
-### URL
+#### URL
 
 URL by měly být také zabaleny v uvozovkách ze stejných důvodů jako je výše:
 
 {% include snippets/syntax/06/index.html %}
 
-###### Další četba
+**Další četba:**
 
-* [All You Ever Need to Know About Sass Interpolation](http://webdesign.tutsplus.com/tutorials/all-you-ever-need-to-know-about-sass-interpolation--cms-21375)
-* [SassyStrings](https://github.com/HugoGiraudel/SassyStrings)
+* [All You Ever Need to Know About Sass Interpolation](https://webdesign.tutsplus.com/tutorials/all-you-ever-need-to-know-about-sass-interpolation--cms-21375)
+* [SassyStrings](https://github.com/KittyGiraudel/SassyStrings)
 
-## Čísla
+### Čísla
 
 V Sassu je číslo datový typ, včetně všeho od bezjednotkových čísel po délky, trvání, frekvence, úhly a tak dále. To umožňuje spustit výpočty na těchto opatřeních.
 
-### Nuly
+#### Nuly
 
 Čísla by měla zobrazovat nulu před tečkou pro hodnoty menší než jedna. Nikdy nezobrazujte koncové nuly.
 
 {% include snippets/syntax/07/index.html %}
 
-### Jednotky
+#### Jednotky
 
 Pokud se zaměříme na jednotky, `0` by nikdy neměla mít definovanou jednotku.
 
@@ -102,36 +102,36 @@ Pro odstranění jednotky z hodnoty ji musíte vydělit *jednou jednotkou svého
 
 Připojením jednotky v řetězci k číslu vznikne řetězec, který zamezí jakýmkoli dalším operacím na hodnotě. Krajení numerické části čísla jednotkou také vyústí v řetězec. A to není to, co chcete.
 
-### Výpočty
+#### Výpočty
 
 **Numerické výpočty na nejvyšší úrovni by měly být vždy zabaleny v závorkách**. Nejen, že tento požadavek výrazně zlěpší čitelnost, ale také zabrání některým krajním případům tím, že nutí Sass vyhodnotit obsah závorek.
 
 {% include snippets/syntax/12/index.html %}
 
-### Magická čísla
+#### Magická čísla
 
-"Magická čísla" je [old school programovací](http://en.wikipedia.org/wiki/Magic_number_(programming)#Unnamed_numerical_constants) termín pro *nepojmenované matematické konstanty*. V podstatě to je jen náhodné číslo, které *prostě funguje*™ a zatím není vázáno na žádné logické vysvětlení.
+"Magická čísla" je [old school programovací](https://en.wikipedia.org/wiki/Magic_number_(programming)#Unnamed_numerical_constants) termín pro *nepojmenované matematické konstanty*. V podstatě to je jen náhodné číslo, které *prostě funguje*™ a zatím není vázáno na žádné logické vysvětlení.
 
 Netřeba snad ani dodávat, že **magická čísla jsou mor a mělo by se jim vyhýbat za jakoukoli cenu**. Pokud nemůžete najít rozumné vysvětlení, proč číslo funguje, přidejte rozsáhlý komentář vysvětlující jak jste se tam dostali a proč si myslíte, že to funguje. Přiznáním se, že nevíte proč něco funguje je stále více užitečné pro dalšího vývojáře, než aby sám musel přijít na to co se děje on nuly.
 
 {% include snippets/syntax/13/index.html %}
 
-###### Další četba
+**Další četba:**
 
-* [Use Lengths, Not Strings](http://hugogiraudel.com/2013/09/03/use-lengths-not-strings/)
-* [Correctly Adding Unit to Number](http://css-tricks.com/snippets/sass/correctly-adding-unit-number/)
-* [Magic Numbers in CSS](http://css-tricks.com/magic-numbers-in-css/)
+* [Use Lengths, Not Strings](https://kittygiraudel.com/2013/09/03/use-lengths-not-strings/)
+* [Correctly Adding Unit to Number](https://css-tricks.com/snippets/sass/correctly-adding-unit-number/)
+* [Magic Numbers in CSS](https://css-tricks.com/magic-numbers-in-css/)
 * [Sassy-Math](https://github.com/at-import/sassy-math)
 
-## Barvy
+### Barvy
 
-Barvy zaujímají v CSS jazyce důležité místo. Jako obvykle, Sass je nakonec cenným spojencem když přijde na řadu manipulace s barvami, především proto, jelikož obsahuje [mocné funkce](http://sass-lang.com/documentation/Sass/Script/Functions.html).
+Barvy zaujímají v CSS jazyce důležité místo. Jako obvykle, Sass je nakonec cenným spojencem když přijde na řadu manipulace s barvami, především proto, jelikož obsahuje [mocné funkce](https://sass-lang.com/documentation/Sass/Script/Functions.html).
 
-### Formáty barev
+#### Formáty barev
 
 Aby byly barvy tak jednoduché, jak jen mohou být, moje rada je respektovat následující pořadí formátů barev:
 
-1. [CSS klíčová slova pro barvy](http://www.w3.org/TR/css3-color/#svg-color);
+1. [CSS klíčová slova pro barvy](https://www.w3.org/TR/css3-color/#svg-color);
 1. [HSL notace](https://cs.wikipedia.org/wiki/HSV);
 1. [RGB notace](https://cs.wikipedia.org/wiki/RGB);
 1. Hexadecimální notace. Přednostně malá písmena a zkrácené kde je jen možné.
@@ -144,7 +144,7 @@ Při používání HSL nebo RGB notace vždy přidejte jednu mezeru po čárce (
 
 {% include snippets/syntax/15/index.html %}
 
-### Barvy a proměnné
+#### Barvy a proměnné
 
 Pokud barvu používáte více než jednou, uložte jí do proměnné se smysluplným názvem reprezentující barvu.
 
@@ -156,11 +156,11 @@ Odteď budete moci používat tuto proměnnou kdekoliv chcete. Pokud je však va
 
 Tímto zabráníte problémům vyplývajících ze změny tématu jako `$sass-pink: blue`.
 
-### Zesvětlení a ztmavení barev
+#### Zesvětlení a ztmavení barev
 
-Obě, [`lighten`](http://sass-lang.com/documentation/Sass/Script/Functions.html#lighten-instance_method) a [`darken`](http://sass-lang.com/documentation/Sass/Script/Functions.html#darken-instance_method) funkce manipulují ze světlostí barvy v HSL formátu přidáním nebo odebráním světlosti. V podstatě nejsou ničím jiným než jen alias pro `$lightness` parametr [`adjust-color`](http://sass-lang.com/documentation/Sass/Script/Functions.html#adjust_color-instance_method) funkce.
+Obě, [`lighten`](https://sass-lang.com/documentation/Sass/Script/Functions.html#lighten-instance_method) a [`darken`](https://sass-lang.com/documentation/Sass/Script/Functions.html#darken-instance_method) funkce manipulují ze světlostí barvy v HSL formátu přidáním nebo odebráním světlosti. V podstatě nejsou ničím jiným než jen alias pro `$lightness` parametr [`adjust-color`](https://sass-lang.com/documentation/Sass/Script/Functions.html#adjust_color-instance_method) funkce.
 
-Věc se má tak, že tyto funkce často neprovádí očekávaný výsledek. Na druhou stranu [`mix`](http://sass-lang.com/documentation/Sass/Script/Functions.html#mix-instance_method) funkce je pěkná cesta, jak zesvětlit nebo ztmavit barvu namícháním s `white` nebo `black`.
+Věc se má tak, že tyto funkce často neprovádí očekávaný výsledek. Na druhou stranu [`mix`](https://sass-lang.com/documentation/Sass/Script/Functions.html#mix-instance_method) funkce je pěkná cesta, jak zesvětlit nebo ztmavit barvu namícháním s `white` nebo `black`.
 
 Výhoda ve využívání `mix` spíše než jednu z těch dvou funkcí shora je, že postupně půjde do černé (nebo bílé), jak budete snižovat poměr barvy, zatímco `darken` a `lighten` rychle sfouknou barvu do černé nebo bílé.
 
@@ -171,18 +171,18 @@ Pokud nechcete pokaždé psát `mix` funkci, můžete vytvořit dvě jednoduché
 {% include snippets/syntax/18/index.html %}
 
 <div class="note">
-  <p>Funkce <a href="http://sass-lang.com/documentation/Sass/Script/Functions.html#scale_color-instance_method"><code>scale-color</code></a> je navržena tak, že škáluje vlastnosti více plynule tím, že vezme v úvahu, jak vysoké nebo nízké již jsou. To by mělo poskytnou výsledky, které jsou hezké jako <code>mix</code>, ale s jasnější konvencí pro volání. Měřítko přesně totéž.</p>
+  <p>Funkce <a href="https://sass-lang.com/documentation/Sass/Script/Functions.html#scale_color-instance_method"><code>scale-color</code></a> je navržena tak, že škáluje vlastnosti více plynule tím, že vezme v úvahu, jak vysoké nebo nízké již jsou. To by mělo poskytnou výsledky, které jsou hezké jako <code>mix</code>, ale s jasnější konvencí pro volání. Měřítko přesně totéž.</p>
 </div>
 
-###### Další četba
+**Další četba:**
 
 * [A Visual Guide to Sass & Compass Color Functions](http://jackiebalzer.com/color)
-* [How to Programmatically Go From One Color to Another](http://thesassway.com/advanced/how-to-programtically-go-from-one-color-to-another-in-sass)
-* [Sass Color Variables That Don’t Suck](http://davidwalsh.name/sass-color-variables-dont-suck)
-* [Using Sass to Build Color Palettes](http://www.sitepoint.com/using-sass-build-color-palettes/)
-* [Dealing with Color Schemes in Sass](http://www.sitepoint.com/dealing-color-schemes-sass/)
+* [How to Programmatically Go From One Color to Another](https://kittygiraudel.com/2014/01/30/programmatically-go-from-one-color-to-another-with-sass/)
+* [Sass Color Variables That Don’t Suck](https://davidwalsh.name/sass-color-variables-dont-suck)
+* [Using Sass to Build Color Palettes](https://www.sitepoint.com/using-sass-build-color-palettes/)
+* [Dealing with Color Schemes in Sass](https://www.sitepoint.com/dealing-color-schemes-sass/)
 
-## Seznamy
+### Seznamy
 
 Seznamy jsou Sass verzí polí. Seznam má strukturu jednorozměrného pole (na rozdíl od [mapy](#mapy)), které jsou navrženy tak, aby mohly obsahovat hodnoty jakéhokoli typu (včetně listů, což vede k vnořeným seznamům).
 
@@ -200,12 +200,12 @@ Pokud přidáváte nové položky do seznamu, vždy používejte dodávané API.
 
 {% include snippets/syntax/20/index.html %}
 
-###### Další četba
+**Další četba:**
 
-* [Understanding Sass lists](http://hugogiraudel.com/2013/07/15/understanding-sass-lists/)
-* [SassyLists](http://sassylists.com)
+* [Understanding Sass lists](https://kittygiraudel.com/2013/07/15/understanding-sass-lists/)
+* [SassyLists](https://at-import.github.io/SassyLists/)
 
-## Mapy
+### Mapy
 
 Již od Sassu 3.3 mohou autoři definovat mapy &mdash; což je Sass termín pro asociativní pole, hashe, nebo dokonce JavaScript objekty. Mapa je datová struktura, která mapuje klíče (což mohou být jakékoli datové typy, včetně map, což bych ale nedoporučoval) k hodnotám jakéhokoli datového typu.
 
@@ -224,7 +224,7 @@ Ilustrace:
 
 {% include snippets/syntax/21/index.html %}
 
-### Debugování Sass map
+#### Debugování Sass map
 
 Pokud se někdy ocitnete ztraceni, nebo budete přemýšlet, co za šílenou magii se právě v Sass mapě děje, pak se nebojte, protože je tu stále možnost záchrany.
 
@@ -234,21 +234,21 @@ Pokud jste zvědavi, do jaké hloubky vaše mapa sahá, přidejte následující
 
 {% include snippets/syntax/23/index.html %}
 
-###### Další četba
+**Další četba:**
 
-* [Using Sass Maps](http://www.sitepoint.com/using-sass-maps/)
-* [Debugging Sass Maps](http://www.sitepoint.com/debugging-sass-maps/)
-* [Extra Map functions in Sass](http://www.sitepoint.com/extra-map-functions-sass/)
+* [Using Sass Maps](https://www.sitepoint.com/using-sass-maps/)
+* [Debugging Sass Maps](https://www.sitepoint.com/debugging-sass-maps/)
+* [Extra Map functions in Sass](https://www.sitepoint.com/extra-map-functions-sass/)
 * [Real Sass, Real Maps](http://blog.grayghostvisuals.com/sass/real-sass-real-maps/)
 * [Sass Maps are Awesome](http://viget.com/extend/sass-maps-are-awesome)
 * [Sass list-maps](https://github.com/lunelson/sass-list-maps)
 * [Sass Maps Plus](https://github.com/lunelson/sass-maps-plus)
 * [Sassy-Maps](https://github.com/at-import/sassy-maps)
-* [Introduction to Sass Maps Usage and Examples](http://webdesign.tutsplus.com/tutorials/an-introduction-to-sass-maps-usage-and-examples--cms-22184)
+* [Introduction to Sass Maps Usage and Examples](https://webdesign.tutsplus.com/tutorials/an-introduction-to-sass-maps-usage-and-examples--cms-22184)
 
-## CSS pravidla
+### CSS pravidla
 
-V tuto chvíli zde uvedu, co většina asi ví, jak by měly být CSS pravidla psány (nebo alespoň jak je nejvíce uvedeno v manuálech, včetně [CSS Guidelines](http://cssguidelin.es/#anatomy-of-a-ruleset)):
+V tuto chvíli zde uvedu, co většina asi ví, jak by měly být CSS pravidla psány (nebo alespoň jak je nejvíce uvedeno v manuálech, včetně [CSS Guidelines](https://cssguidelin.es/#anatomy-of-a-ruleset)):
 
 * související selektory na stejném řádku; nesouvisející na nových řádcích;
 * otevírací závorka (`{`) oddělena jednou mezerou od posledního selektoru;
@@ -274,11 +274,11 @@ Ilustrace:
 
 {% include snippets/syntax/25/index.html %}
 
-###### Další četba
+**Další četba:**
 
-* [Anatomy of a Ruleset](http://cssguidelin.es/#anatomy-of-a-ruleset)
+* [Anatomy of a Ruleset](https://cssguidelin.es/#anatomy-of-a-ruleset)
 
-## Řazení deklarace
+### Řazení deklarace
 
 Nenapadá mě snad žádné jiné téma, kde jsou názory tak rozdělené jako právě v řazení CSS deklarací. Konkrétně se dělí na dvě frakce:
 
@@ -297,30 +297,30 @@ Je tu také další zajímavý způsob řazení nazývaný [Concentric CSS](http
 
 {% include snippets/syntax/28/index.html %}
 
-Musím říci, že se sám nemohu rozhodnout. [Nedávný průzkum na CSS-Tricks](http://css-tricks.com/poll-results-how-do-you-order-your-css-properties/) zjistil, že přes 45% vývojářů řadí své deklarace podle typu a oproti tomu 14% abecedně. Ale je tu také 39%, kteří vše řadí náhodně, včetně mě.
+Musím říci, že se sám nemohu rozhodnout. [Nedávný průzkum na CSS-Tricks](https://css-tricks.com/poll-results-how-do-you-order-your-css-properties/) zjistil, že přes 45% vývojářů řadí své deklarace podle typu a oproti tomu 14% abecedně. Ale je tu také 39%, kteří vše řadí náhodně, včetně mě.
 
 {% include images/order-poll.html %}
 
 Právě proto nebudu do příručky dávat doporučení na výběr. Vyberte si tu, kterou preferujete vy, jen buďte ve všech stylech konzistentní (tedy žádná *náhodná* možnost).
 
 <div class="note">
-  <p><a href="http://peteschuster.com/2014/12/reduce-file-size-css-sorting/">Nedávná studie</a> ukazuje, že používání <a href="https://github.com/csscomb/csscomb.js">CSS Comb</a> (což používá <a href="https://github.com/csscomb/csscomb.js/blob/master/config/csscomb.json">řazení podle typu</a>) pro řazení CSS deklarací končí s zkrácením průměrné velikosti pod Gzip kompresí o 2,7%, v porovnání 1,3% když je řazení podle abecedy.</p>
+  <p><a href="https://web.archive.org/web/20190618180712/http://peteschuster.com/2014/12/reduce-file-size-css-sorting/">Nedávná studie</a> ukazuje, že používání <a href="https://github.com/csscomb/csscomb.js">CSS Comb</a> (což používá <a href="https://github.com/csscomb/csscomb.js/blob/master/config/csscomb.json">řazení podle typu</a>) pro řazení CSS deklarací končí s zkrácením průměrné velikosti pod Gzip kompresí o 2,7%, v porovnání 1,3% když je řazení podle abecedy.</p>
 </div>
 
-###### Další četba
+**Další četba:**
 
 * [CSS Comb](https://github.com/csscomb/csscomb.js)
 * [Concentric CSS](https://github.com/brandon-rhodes/Concentric-CSS)
 * [Idiomatic CSS](https://github.com/necolas/idiomatic-css)
-* [On Declaration Sorting](http://meiert.com/en/blog/20140924/on-declaration-sorting/)
-* [Reduce File Size With CSS Sorting](http://peteschuster.com/2014/12/reduce-file-size-css-sorting/)
-* [Poll Results: How Do You Order Your CSS Properties?](http://css-tricks.com/poll-results-how-do-you-order-your-css-properties/)
+* [On Declaration Sorting](https://meiert.com/en/blog/20140924/on-declaration-sorting/)
+* [Reduce File Size With CSS Sorting](https://web.archive.org/web/20190618180712/http://peteschuster.com/2014/12/reduce-file-size-css-sorting/)
+* [Poll Results: How Do You Order Your CSS Properties?](https://css-tricks.com/poll-results-how-do-you-order-your-css-properties/)
 
-## Noření selektorů
+### Noření selektorů
 
 Jedna konkrétní funkce Sass, která je až příliš zneužívána spoustou vývojářů je **noření selektorů**. Noření selektorů nabízí způsob, jak se autoři stylů mohou vypořádat s dlouhými selektory vnořováním menších v dalších.
 
-### Obecné pravidlo
+#### Obecné pravidlo
 
 Například následující vnořování v Sass:
 
@@ -338,7 +338,7 @@ Ve stejném duchu, od Sass 3.3, je možné použít referenci na aktuální sele
 
 {% include snippets/syntax/32/index.html %}
 
-Tento způsob se často používá spolu s [BEM jmennou konvencí](http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/) pro generování `.block__element` a `.block--modifier` selektorů založených na originálním selektoru (tedy v tomto případě `.block`).
+Tento způsob se často používá spolu s [BEM jmennou konvencí](https://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/) pro generování `.block__element` a `.block--modifier` selektorů založených na originálním selektoru (tedy v tomto případě `.block`).
 
 <div class="note">
   <p>Ačkoliv je to možná neoficiální, generování nových selektorů z reference aktuálního selektoru (<code>&</code>) dělá tyto selektory nedosažitelné v codebase, protože samy o sobě neexistují.</p>
@@ -350,7 +350,7 @@ Toto tvrzení se stává skutečnější čím dál tím více, čím je aktuál
 
 Abyste se takovýmto situacím vyhnuli, **vyhýbejte se vnořeným selektorům jak jen to jde**. Každopádně pro toto pravidlo je samozřejmě pár výjimek.
 
-### Výjimky
+#### Výjimky
 
 Pro začátek, je dovoleno a dokonce doporučeno nořit pseudo třídy a pseudo elementy do původního selektoru.
 
@@ -376,8 +376,8 @@ Přepsáním předešlého příkladu by to vypadalo asi takto:
 
 Jako asi se vším, specifika jsou poněkud nedůležitá, důležitá je konzistence. Pokud noření plně důvěřujete, klidně noření používejte. Jenom se ujistěte, že to nikomu z vašeho týmu nevadí.
 
-###### Další četba
+**Další četba:**
 
-* [Beware of Selector Nesting](http://www.sitepoint.com/beware-selector-nesting-sass/)
-* [The Inception Rule](http://thesassway.com/beginner/the-inception-rule)
-* [Avoid nested selectors for more modular CSS](http://thesassway.com/intermediate/avoid-nested-selectors-for-more-modular-css)
+* [Beware of Selector Nesting](https://www.sitepoint.com/beware-selector-nesting-sass/)
+* [The Inception Rule](https://thesassway.herokuapp.com/beginner/the-inception-rule)
+* [Avoid nested selectors for more modular CSS](https://thesassway.herokuapp.com/intermediate/avoid-nested-selectors-for-more-modular-css)

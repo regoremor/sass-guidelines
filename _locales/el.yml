@@ -17,7 +17,12 @@ configuration:
 # _locales/en.yml
 translations:
   baseline: "Ένα δογματικό styleguide για συγγραφή ισορροπημένης, συντηρήσιμης και επεκτάσιμης Sass."
-  footer_content: "Φτιαγμένο με μεράκι από τον [Hugo Giraudel](http://hugogiraudel.com)"
+  footer_content: "Φτιαγμένο με μεράκι από τον [Kitty Giraudel](https://kittygiraudel.com) και μεταφράστηκε από τους [Kostantinos Margaritis](https://github.com/margaritis), [Adonis K.](https://github.com/varemenos), [Mod Kaffes](https://github.com/modkaffes) και [Sébastien Nikolaou](vhttps://github.com/sebdesign)"
+
+  translation_disclaimer: |
+    Βλέπετε την ελληνική μετάφραση των [Μόδεστο Καφφέ](https://github.com/modkaffes), [Σεμπαστιέν Νικολάου](https://github.com/sebdesign), [Άδωνη Κακουλίδη](https://github.com/varemenos) και [Κωνσταντίνου Μαργαρίτη](https://github.com/margaritis) για τις πρωτότυπες [Οδηγίες για Sass](/) των [Kitty Giraudel](https://kittygiraudel.com).
+
+    Αυτή η έκδοση συντηρείται αποκλειστικά από συνεισφέροντες χωρίς τον έλεγχο του κύριου συντάκτη, επομένως μπορεί να μην είναι εντελώς αυθεντική.
 
   aside_title: "επιλογές"
   aside_report: "Αναφορά προβλήματος"
@@ -42,7 +47,7 @@ translations:
 
   note: "Σημείωση"
 
-  image_color_functions: "Εικονογράφηση των διαφορών μεταξύ `lighten`/`darken` και `mix` από την [KatieK](http://codepen.io/KatieK2/pen/tejhz/)"
+  image_color_functions: "Εικονογράφηση των διαφορών μεταξύ `lighten`/`darken` και `mix` από την [KatieK](https://codepen.io/KatieK2/pen/tejhz/)"
   image_order_poll: "Διάγραμμα που δείχνει πως οι developers ταξινομούν τα CSS declarations"
   image_sassdoc: "Το documentation δημιουργήθηκε με SassDoc"
   image_wallpaper: "Wallpaper από τον [Julien He](https://twitter.com/julien_he)"

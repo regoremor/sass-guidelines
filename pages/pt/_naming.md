@@ -1,7 +1,7 @@
 
-# Convenções de nomenclatura
+## Convenções de nomenclatura
 
-Nesta secção, não iremos lidar com as melhores convenções de nomenclatura para manutenção e escalabilidade; não só isso apenas vos diz respeito, como também está fora do âmbito de um guia de estilo de Sass. Eu sugiro os recomendados por [CSS Guidelines](http://cssguidelin.es/#naming-conventions).
+Nesta secção, não iremos lidar com as melhores convenções de nomenclatura para manutenção e escalabilidade; não só isso apenas vos diz respeito, como também está fora do âmbito de um guia de estilo de Sass. Eu sugiro os recomendados por [CSS Guidelines](https://cssguidelin.es/#naming-conventions).
 
 Existem algumas coisas às quais podem dar nome em Sass, e é importante nomeá-las corretamente para que toda a base de código pareça consistente e fácil de ler:
 
@@ -15,7 +15,7 @@ Em relação às variáveis, funções e *mixins*, mantemos algo bastante semelh
 
 {% include snippets/naming/01/index.html %}
 
-## Constantes
+### Constantes
 
 Se por acaso são programadores de *frameworks* ou bibliotecas, poderão encontrar-se a lidar com variáveis que não é suposto serem alteradas em qualquer circunstância: constantes. Infelizmente (ou felizmente?), Sass não fornece nenhuma forma de definir tais entidades, por isso temos que ficar pelas rigorosas convenções de nomenclatura de forma a nos darmos a entender.
 
@@ -23,9 +23,9 @@ Tal como para várias linguagens, eu sugiro variáveis em maiúsculas e delimita
 
 {% include snippets/naming/02/index.html %}
 
-Se você realmente quer brincar com essas ideias de constantes no Sass, deverias ler [esse artigo dedicado](http://www.sitepoint.com/dealing-constants-sass/).
+Se você realmente quer brincar com essas ideias de constantes no Sass, deverias ler [esse artigo dedicado](https://www.sitepoint.com/dealing-constants-sass/).
 
-## Namespace
+### Namespace
 
 Se tencionam distribuir o vosso código Sass, no caso de uma biblioteca, uma *framework*, um sistema de grelhas ou o que seja, talvez queiram considerar colocar todas as vossas variáveis, funções, *mixins* e *placeholders* no seu próprio *namespace*, para que não entrem em conflito com o código de alguém.
 
@@ -33,7 +33,7 @@ Por exemplo, se trabalharem num projecto chamado *Sassy Unicorn* que se destina 
 
 {% include snippets/naming/03/index.html %}
 
-[Kaelig](http://kaelig.fr) tem [um artigo muito perpicaz sobre namespace CSS global](http://blog.kaelig.fr/post/44554267597/please-respect-the-global-css-namespace), no caso deste tópico seja de interesse para você.
+[Kaelig](https://kaelig.fr) tem [um artigo muito perpicaz sobre namespace CSS global](https://blog.kaelig.fr/post/44554267597/please-respect-the-global-css-namespace), no caso deste tópico seja de interesse para você.
 
 <div class="note">
   <p>De notar que *namespacing* automático é definitivamente um objectivo de design para a próxima reformulação do <code>@import</code> de Sass 4.0. À medida que tal se aproxima da sua concretização, será cada vez menos útil fazer *namespacing* manual; eventualmente, bibliotecas manualmente *namespaced* poderão realmente ser mais difíceis de usar.</p>

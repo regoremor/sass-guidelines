@@ -1,7 +1,7 @@
 
-# Convenciones De Nomenclatura
+## Convenciones De Nomenclatura
 
-En esta sección, no trataremos sobre cuáles son las mejores convenciones de nomenclatura en CSS para mejorar el mantenimiento y la escalabilidad; esto no solo depende de tí, sino que también está fuera del alcance de una guía de estilo. Sugiero las recomendaciones que aparecen en [la guía de estilo de CSS - En inglés](http://cssguidelin.es/#naming-conventions).
+En esta sección, no trataremos sobre cuáles son las mejores convenciones de nomenclatura en CSS para mejorar el mantenimiento y la escalabilidad; esto no solo depende de tí, sino que también está fuera del alcance de una guía de estilo. Sugiero las recomendaciones que aparecen en [la guía de estilo de CSS - En inglés](https://cssguidelin.es/#naming-conventions).
 
 Hay algunas cosas a las que se les puede asignar un nombre en Sass, y es importante que tengan un nombre adecuado, así todo tu código será coherente y fácil de leer:
 
@@ -15,7 +15,7 @@ En cuanto a las variables, las funciones y los *mixins*, utilizaremos algo muy *
 
 {% include snippets/naming/01/index.html %}
 
-## Constantes
+### Constantes
 
 Si resultas ser un desarrollador de *frameworks* o de librerías, puede que te encuentres con variables que no van a ser actualizadas bajo ninguna circunstancia: las constantes. Desafortunadamente (o ¿afortunadamente?), Sass no proporciona ninguna forma para definir este tipo de entidades, por lo que tenemos que ser muy estrictos con las nomenclaturas para mantener nuestro objetivo.
 
@@ -23,9 +23,9 @@ Como con muchos lenguajes, sugiero que se utilice la opción todo-mayúsculas cu
 
 {% include snippets/naming/02/index.html %}
 
-Si realmente quieres jugar con la idea de las constantes en Sass, deberías leer [este dedicado artículo](http://www.sitepoint.com/dealing-constants-sass/).
+Si realmente quieres jugar con la idea de las constantes en Sass, deberías leer [este dedicado artículo](https://www.sitepoint.com/dealing-constants-sass/).
 
-## Espacio De Nombres
+### Espacio De Nombres
 
 Si tienes la intención de distribuir tu código Sass, como por ejemplo, en el caso de una librería, un *framework*, un sistema de retícula o lo que sea, es posible que quieras considerar crear un espacio de nombres (*namespace*) para tus variables, funciones, *mixins* y *placeholders* para que no entren en conflicto con el código de ninguna otra persona.
 
@@ -33,7 +33,7 @@ Por ejemplo, si trabajas en un proyecto llamado *Sassy Unicorn* que está pensad
 
 {% include snippets/naming/03/index.html %}
 
-[Kaelig](http://kaelig.fr) tiene un [artículo muy revelador acerca del espacio de nombres global de CSS -En inglés](http://blog.kaelig.fr/post/44554267597/please-respect-the-global-css-namespace), en caso de que este tema te interese.
+[Kaelig](https://kaelig.fr) tiene un [artículo muy revelador acerca del espacio de nombres global de CSS -En inglés](https://blog.kaelig.fr/post/44554267597/please-respect-the-global-css-namespace), en caso de que este tema te interese.
 
 <div class="note">
   <p>Ten en cuenta que los espacios de nombres automáticos son sin duda un objetivo de diseño para <code>@import</code> en la nueva versión de Sass 4.0. Cuanto más se aproxima la solución, se volverá cada vez menos útil hacerlo de manera manual; eventualmente, las librerías nombradas manualmente pueden ser más difíciles de utilizar.</p>

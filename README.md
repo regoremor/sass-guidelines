@@ -1,7 +1,5 @@
 # Sass Guidelines
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/HugoGiraudel/sass-guidelines.svg)](https://greenkeeper.io/)
-
 An opinionated styleguide for writing sane, maintainable and scalable Sass.
 
 ## Code of Conduct
@@ -22,6 +20,6 @@ npm start
 # http://localhost:4000
 ```
 
-To run a specific task from [package-scripts.js](https://github.com/HugoGiraudel/sass-guidelines/blob/master/package-scripts.js), prepend `npm start`, like: `npm start js.vendors`.
+To run a specific task from [package-scripts.js](https://github.com/KittyGiraudel/sass-guidelines/blob/master/package-scripts.js), prepend `npm start`, like: `npm start js.vendors`.
 
 [![js-standard-style](https://cdn.rawgit.com/feross/standard/master/badge.svg)](http://standardjs.com)

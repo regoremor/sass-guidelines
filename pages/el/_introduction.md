@@ -1,13 +1,13 @@
 
-# Εισαγωγή
+## Εισαγωγή
 
-## Λόγοι για ένα styleguide
+### Λόγοι για ένα styleguide
 
 Ένα styleguide δεν είναι ένα έγγραφο απλά ευχάριστο στην ανάγνωση, που απεικονίζει μια ιδανική κατάσταση για τον κώδικά σου. Είναι ένα έγγραφο βασικής σημασίας για τη ζωή ενός project, το οποίο περιγράφει γιατί και πώς πρέπει να γράφεται ο κώδικας. Μπορεί να ακούγεται πλεονασμός για μικρά projects, αλλά βοηθάει πολύ στη διατήρηση ενός καθαρού, επεκτάσιμου και ευκολοσυντήρητου κώδικα.
 
 Περιττό να πούμε πως όσο περισσότεροι developers εμπλέκονται σε ένα project, τόσο περισσότερο χρειάζονται guidelines για τον κώδικα. Στα ίδια πλαίσια, όσο μεγαλύτερο το project, τόσο αναγκαίο καθιστάται ένα styleguide.
 
-Ο [Harry Roberts](http://csswizardry.com) αναφέρει πολύ καλά στο [CSS Guidelines](http://cssguidelin.es/#the-importance-of-a-styleguide):
+Ο [Harry Roberts](https://csswizardry.com) αναφέρει πολύ καλά στο [CSS Guidelines](https://cssguidelin.es/#the-importance-of-a-styleguide):
 
 <blockquote>
   <p>Ένα code styleguide (σημ., όχι οπτικό styleguide) είναι ένα πολύτιμο εργαλείο για ομάδες οι οποίες:</p>
@@ -20,7 +20,7 @@
   </ul>
 </blockquote>
 
-## Disclaimer
+### Disclaimer
 
 Πρώτα απ' όλα: **δεν πρόκειται για ένα CSS styleguide**. Αυτό το έγγραφο δεν εξετάζει συμβάσεις ονοματοδοσίας για κλάσεις CSS, modular patterns, ούτε το ζήτημα του ID στη σφαίρα της CSS. Αυτά τα guidelines έχουν μοναδικό στόχο να εξετάσουν θέματα ειδικά για τη Sass.
 
@@ -28,19 +28,19 @@
 
 Προφανώς, αυτός δεν είναι ο μοναδικός τρόπος να αντιμετωπίσεις τα πράγματα, οπότε μπορεί να αρμόζει ή να μην αρμόζει στο project σου· επέλεξε ελεύθερα και οτιδήποτε προσάρμοσέ το στις ανάγκες σου. Όπως λέμε, *your mileage may vary*.
 
-## Βασικές αρχές
+### Βασικές αρχές
 
-Στο τέλος της μέρας, αν μπορείς να συγκρατήσεις ένα πράγμα απ' όλο το styleguide, είναι ότι **[η Sass πρέπει να είναι όσο πιο απλή γίνεται](http://www.sitepoint.com/keep-sass-simple/)**.
+Στο τέλος της μέρας, αν μπορείς να συγκρατήσεις ένα πράγμα απ' όλο το styleguide, είναι ότι **[η Sass πρέπει να είναι όσο πιο απλή γίνεται](https://www.sitepoint.com/keep-sass-simple/)**.
 
-Χάρη στα ανόητα πειράματά μου όπως οι [bitwise operators](https://github.com/HugoGiraudel/SassyBitwise), οι [iterators and generators](https://github.com/HugoGiraudel/SassyIteratorsGenerators) και [ένας JSON parser](https://github.com/HugoGiraudel/SassyJSON) σε Sass, ξέρουμε όλοι τι μπορεί να επιτευχθεί με αυτόν τον preprocessor.
+Χάρη στα ανόητα πειράματά μου όπως οι [bitwise operators](https://github.com/KittyGiraudel/SassyBitwise), οι [iterators and generators](https://github.com/KittyGiraudel/SassyIteratorsGenerators) και [ένας JSON parser](https://github.com/KittyGiraudel/SassyJSON) σε Sass, ξέρουμε όλοι τι μπορεί να επιτευχθεί με αυτόν τον preprocessor.
 
-Παράλληλα, η CSS είναι μια απλή γλώσσα. Η Sass που προορίζεται για την εξαγωγή CSS, δεν θα έπρεπε να είναι αρκετά πιο περίπλοκη απο την CSS. Η [αρχή KISS](http://en.wikipedia.org/wiki/KISS_principle) (Keep It Simple Stupid) είναι το κλειδί και μπορεί να πάρει προτεραιότητα έναντι της [DRY αρχής](http://en.wikipedia.org/wiki/Don%27t_repeat_yourself) (Don't Repeat Yourself) σε κάποιες περιπτώσεις.
+Παράλληλα, η CSS είναι μια απλή γλώσσα. Η Sass που προορίζεται για την εξαγωγή CSS, δεν θα έπρεπε να είναι αρκετά πιο περίπλοκη απο την CSS. Η [αρχή KISS](https://en.wikipedia.org/wiki/KISS_principle) (Keep It Simple Stupid) είναι το κλειδί και μπορεί να πάρει προτεραιότητα έναντι της [DRY αρχής](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself) (Don't Repeat Yourself) σε κάποιες περιπτώσεις.
 
 Μερικές φορές, είναι καλύτερο να επαναλάμβανόμαστε λίγο για να κρατήσουμε τον κώδικα συντηρήσιμο, αντι να φτιάξεις κάτι βαρή, δυσμεταχείριστος και αδικαιολόγητα περίπλοκο σύστημα που είναι αδύνατο να συντηρηθεί επειδή είναι υπερβολικά περίπλοκο.
 
 Επίσης, και επιτρέψτε μου να παραθέσω τον [Harry Roberts](https://csswizardry.com) για ακόμη μια φορά, **ο πραγματισμός υπερέχει τις τελειότητας**. Μετά από κάποιο σημείο, μάλλον θα βρείτε τον εαυτό σας να πηγαίνει ενάντια στα πράγματα που περιγράφονται εδώ. Αν βγάζουν νόημα και πιστεύετε πως είναι ορθά, μην διστάσετε να το κάνετε. Ο κώδικας είναι ένα μέσο, όχι αυτοσκοπός.
 
-## Επέκταση των guidelines
+### Επέκταση των guidelines
 
 Ένα μεγάλο μέρος αυτού του styleguide είναι αρκετά δογματικό. Έχω διαβάσει και γράψει Sass αρκετά χρόνια τώρα, σε βαθμό πού τώρα έχω πολλές αρχές όσον αφορά τη συγγραφή καθαρών stylesheets. Καταλαβαίνω ότι μπορεί να μην ικανοποιεί ούτε να ταιριάζει σε όλους, και αυτό είναι απολύτως φυσιολογικό.
 
